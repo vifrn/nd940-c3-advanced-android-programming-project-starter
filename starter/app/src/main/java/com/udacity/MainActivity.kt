@@ -40,6 +40,9 @@ class MainActivity : AppCompatActivity() {
     private val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+            if(id == downloadID) {
+                custom_button.buttonState = ButtonState.Completed
+            }
         }
     }
 
@@ -67,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             val downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
             downloadID =
                 downloadManager.enqueue(request)// enqueue puts the download request in the queue.
+            custom_button.buttonState = ButtonState.Loading
         }
     }
 
