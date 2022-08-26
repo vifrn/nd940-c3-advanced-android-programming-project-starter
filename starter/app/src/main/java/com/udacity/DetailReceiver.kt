@@ -14,6 +14,7 @@ class DetailReceiver : BroadcastReceiver() {
         val newIntent = intent.extras?.get("activity") as Intent
         newIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
 
+        context.sendBroadcast(Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS))
         context.startActivity(newIntent)
     }
 }

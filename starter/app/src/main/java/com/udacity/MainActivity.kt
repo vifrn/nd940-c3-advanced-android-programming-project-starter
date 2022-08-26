@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             0,
             contentIntent,
-            0
+            PendingIntent.FLAG_UPDATE_CURRENT
         )
     }
 
@@ -161,8 +161,6 @@ class MainActivity : AppCompatActivity() {
             notificationManager.createNotificationChannel(notificationChannel)
         }
     }
-
-    enum class DownloadOptions {NONE, GLIDE, LOADAPP, RETROFIT}
 
     companion object {
         private const val GLIDE_URL = "https://github.com/bumptech/glide"
