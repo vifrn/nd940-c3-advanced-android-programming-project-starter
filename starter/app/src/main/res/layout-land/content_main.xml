@@ -11,10 +11,11 @@
 
     <ImageView
         android:id="@+id/topImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
         android:src="@drawable/ic_baseline_cloud_download"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/purple_maybe_violet" />
 
@@ -23,19 +24,20 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="20dp"
+        android:layout_marginStart="411dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/topImage" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/custom_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topImage">
+        app:layout_constraintStart_toEndOf="@+id/topImage"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/glide_radio_button"
